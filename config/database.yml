@@ -1,0 +1,19 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: postgres
+  password: root1
+  host: localhost
+
+development:
+  <<: *default
+  database: dvdrental
+
+
+production:
+  <<: *default
+  database: curso_production
+  username: curso
+  password: <%= ENV['CURSO_DATABASE_PASSWORD'] %>
